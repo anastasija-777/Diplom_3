@@ -16,6 +16,7 @@ class MainPageLocators:
     COUNTER_SAUCE_SPICY_X_LOCATOR = (By.XPATH, ".//span[contains(text(),'Соус Spicy-X')]")
     BUTTON_PLACE_AN_ORDER_LOCATOR = (By.XPATH, ".//button[text()='Оформить заказ']")
     TEXT_ORDER_ID_LOCATOR = (By.XPATH, ".//p[text()='идентификатор заказа']")
+    NUMBER_ORDER_LOCATOR = (By.XPATH, "//h2[@class='Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text text_type_digits-large mb-8' and starts-with(normalize-space(text()), '2')]")
 
 
 

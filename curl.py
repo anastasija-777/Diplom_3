@@ -9,5 +9,6 @@ reset_password_url = main_url + '/reset-password'
 personal_account_url = main_url + '/account/profile'
 order_history_url = main_url + '/account/order-history'
 order_feed_url = main_url + '/feed'
+create_order_url = main_url + '/api/orders'
 
 
