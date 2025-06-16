@@ -8,11 +8,11 @@ class ResetPasswordPage(BasePage):
 
     @allure.step('Ожидаем переход на страницу изменения пароля')
     def wait_reset_password_url(self):
-        self.wait_url(reset_password_url)
+        return self.wait_url(reset_password_url)
 
     @allure.step('Ждем пока оверлей станет невидимым')
     def wait_overlay_hide(self):
-        self.wait_for_element_hide(ResetPasswordPageLocators.OVERLAY_LOCATOR)
+        return self.wait_for_element_hide(ResetPasswordPageLocators.OVERLAY_LOCATOR)
 
     @allure.step('Кликаем по кнопке показать/скрыть пароль')
     def click_button_show_password(self):
@@ -20,7 +20,7 @@ class ResetPasswordPage(BasePage):
 
     @allure.step('Проверяем появление поля "Пароль"')
     def check_wait_text_password_recovery(self):
-        self.find_element_with_wait(ResetPasswordPageLocators.TEXT_PASSWORD_RECOVERY)
+        return self.find_element_with_wait(ResetPasswordPageLocators.TEXT_PASSWORD_RECOVERY)
 
     @allure.step('Проверяем что поле Пароль стало активно')
     def check_field_active(self):

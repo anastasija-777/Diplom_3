@@ -7,7 +7,7 @@ class MainPage(BasePage):
 
     @allure.step('Ждем пока оверлей станет невидимым')
     def wait_overlay_hide(self):
-        self.wait_for_element_hide(MainPageLocators.OVERLAY_LOCATOR)
+        return self.wait_for_element_hide(MainPageLocators.OVERLAY_LOCATOR)
 
     @allure.step('Кликаем на главной странице по кнопке "Войти в аккаунт"')
     def click_button_log_in_account(self):
@@ -53,23 +53,23 @@ class MainPage(BasePage):
 
     @allure.step('Проверяем появление текста "Соберите бургер" на главной странице')
     def check_current_text_assemble_burger(self):
-        self.find_element_with_wait(MainPageLocators.TEXT_ASSEMBLE_BURGER_LOCATOR)
+        return self.find_element_with_wait(MainPageLocators.TEXT_ASSEMBLE_BURGER_LOCATOR)
 
     @allure.step('Проверяем появление окна с деталями ингредиента')
     def check_modal_ingredient_details(self):
-        self.find_element_with_wait(MainPageLocators.TEXT_INGREDIENT_DETAILS_LOCATOR)
+        return self.find_element_with_wait(MainPageLocators.TEXT_INGREDIENT_DETAILS_LOCATOR)
 
     @allure.step('Проверяем что окно с деталями ингредиента закрывается при нажатии на крестик')
     def check_close_modal_ingredient_details(self):
-        self.wait_for_element_hide(MainPageLocators.CROSS_BUTTON_LOCATOR)
+        return self.wait_for_element_hide(MainPageLocators.CROSS_BUTTON_LOCATOR)
 
     @allure.step('Проверяем что Соус Spicy-X появился в заказе')
     def check_add_ingredient_sauce_spicy_x(self):
-       self.find_element_with_wait(MainPageLocators.COUNTER_SAUCE_SPICY_X_LOCATOR)
+       return self.find_element_with_wait(MainPageLocators.COUNTER_SAUCE_SPICY_X_LOCATOR)
 
     @allure.step('Проверяем появление номера заказа в появившемся окне')
     def check_visible_text_order_id(self):
-        self.find_element_with_wait(MainPageLocators.TEXT_ORDER_ID_LOCATOR)
+        return self.find_element_with_wait(MainPageLocators.TEXT_ORDER_ID_LOCATOR)
 
 
 

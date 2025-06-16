@@ -22,7 +22,7 @@ class BasePage:
 
     @allure.step('Ожидаем переход на новую страницу {url}')
     def wait_url(self, url):
-        WebDriverWait(self.driver, 20).until(EC.url_to_be(url))
+        return WebDriverWait(self.driver, 20).until(EC.url_to_be(url))
 
     @allure.step('Кликаем по элементу')
     def click_on_element(self, locator):
@@ -37,7 +37,7 @@ class BasePage:
 
     @allure.step('Подождать пока элемент станет невидимым')
     def wait_for_element_hide(self,locator):
-        WebDriverWait(self.driver,20).until(EC.invisibility_of_element_located(locator))
+        return WebDriverWait(self.driver,20).until(EC.invisibility_of_element_located(locator))
 
     @allure.step('Проверяем текущий url')
     def check_url(self):

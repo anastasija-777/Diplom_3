@@ -11,7 +11,7 @@ class TestOrderFeed:
         with allure.step('Кликаем на заказ из Ленты заказов'):
             order_feed_page.click_order()
         with allure.step('Проверяем что откроется всплывающее окно с деталями'):
-            assert order_feed_page.check_appears_window_with_details
+            assert order_feed_page.check_appears_window_with_details()
 
     @allure.title('Проверяем, что заказы пользователя из раздела «История заказов» отображаются на странице «Лента заказов»')
     def test_create_order_is_displayed_in_order_history_and_order_feed(self, driver,

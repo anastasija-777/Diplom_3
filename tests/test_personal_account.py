@@ -34,7 +34,7 @@ class TestPersonalAccount:
         with allure.step('Ждем пока оверлей станет невидимым'):
             personal_account_page.wait_overlay_hide()
         with allure.step('Проверяем появление текста "Профиль"'):
-            assert personal_account_page.check_text_profile
+            assert personal_account_page.check_text_profile()
 
     @allure.title('Проверяем переход в раздел «История заказов»')
     def test_click_hyperlink_order_history(self,driver,
@@ -68,7 +68,7 @@ class TestPersonalAccount:
         with allure.step('Кликаем по гиперссылке "История заказов"'):
             personal_account_page.click_hyperlink_order_history()
         with allure.step('Проверяем что перешли на страницу "История заказов"'):
-            assert personal_account_page.check_current_page_order_history
+            assert personal_account_page.check_current_page_order_history()
 
     @allure.title('Проверить выход из аккаунта')
     def test_click_hyperlink_exit(self,driver,
@@ -102,5 +102,5 @@ class TestPersonalAccount:
         with allure.step('Кликаем по гиперссылке "Выход"'):
             personal_account_page.click_hyperlink_exit()
         with allure.step('Проверяем что вышли из профиля'):
-            assert personal_account_page.check_current_login_page
+            assert personal_account_page.check_current_login_page()
 

@@ -17,7 +17,7 @@ class TestRestorePassword:
         with allure.step('Ожидаем пока появится поле Email'):
             restore_password_page.wait_field_email()
         with allure.step('Проверяем что перешли на страницу "Восстановление пароля"'):
-            assert restore_password_page.check_current_page_restore_password_page
+            assert restore_password_page.check_current_page_restore_password_page()
 
 
     @allure.title('Проверяем ввод почты и клик по кнопке «Восстановить»')
@@ -40,7 +40,7 @@ class TestRestorePassword:
         with allure.step('Ждем пока оверлей станет невидимым'):
             reset_password_page.wait_overlay_hide()
         with allure.step('Ожиданием появления заголовка "Восстановление пароля"'):
-            assert reset_password_page.check_wait_text_password_recovery
+            assert reset_password_page.check_wait_text_password_recovery()
 
     @allure.title('Проверяем, что клик по кнопке показать/скрыть пароль делает поле активным — подсвечивает его.')
     def test_click_button_show_password_makes_field_active(self, driver,
@@ -64,7 +64,7 @@ class TestRestorePassword:
         with allure.step('Кликаем по кнопке показать/скрыть пароль'):
             reset_password_page.click_button_show_password()
         with allure.step('Проверяем что поле Пароль стало активно'):
-            assert reset_password_page.check_field_active
+            assert reset_password_page.check_field_active()
 
 
 

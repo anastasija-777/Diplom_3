@@ -8,7 +8,7 @@ class RestorePasswordPage(BasePage):
 
     @allure.step('Ожидаем появление поля  Email')
     def wait_field_email(self):
-        self.find_element_with_wait(RestorePasswordPageLocators.FIELD_EMAIL_LOCATOR)
+        return self.find_element_with_wait(RestorePasswordPageLocators.FIELD_EMAIL_LOCATOR)
 
     @allure.step('Кликаем по полю Email')
     def click_on_field_email(self):
@@ -25,5 +25,5 @@ class RestorePasswordPage(BasePage):
 
     @allure.step('Проверяем что перешли на страницу "Восстановление пароля"')
     def check_current_page_restore_password_page(self):
-        self.wait_url(restore_password_url)
+        return self.wait_url(restore_password_url)
 

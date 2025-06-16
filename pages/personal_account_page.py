@@ -8,7 +8,7 @@ class PersonalAccountPage(BasePage):
 
     @allure.step('Подождать пока оверлей станет невидимым')
     def wait_overlay_hide(self):
-        self.wait_for_element_hide(PersonalAccountPageLocators.OVERLAY_LOCATOR)
+        return self.wait_for_element_hide(PersonalAccountPageLocators.OVERLAY_LOCATOR)
 
     @allure.step('Кликаем по гиперссылке "История заказов"')
     def click_hyperlink_order_history(self):
@@ -22,14 +22,14 @@ class PersonalAccountPage(BasePage):
 
     @allure.step('Проверяем появление текста "Профиль"')
     def check_text_profile(self):
-        self.find_element_with_wait(PersonalAccountPageLocators.TEXT_PROFILE_LOCATOR)
+        return self.find_element_with_wait(PersonalAccountPageLocators.TEXT_PROFILE_LOCATOR)
 
     @allure.step('Проверяем что перешли на страницу "История заказов"')
     def check_current_page_order_history(self):
-        self.wait_url(order_history_url)
+        return self.wait_url(order_history_url)
 
     @allure.step('Проверяем что вышли из профиля')
     def check_current_login_page(self):
-        self.wait_url(login_user_page_url)
+        return self.wait_url(login_user_page_url)
 
 

@@ -16,7 +16,7 @@ class TestMainFunctionality:
         with allure.step('Ждем когда исчезнет оверлей'):
             order_feed_page.wait_overlay_hide()
         with allure.step('Проверяем появление заголовка "Лента заказов"'):
-            assert order_feed_page.check_title_order_feed
+            assert order_feed_page.check_title_order_feed()
 
 
     @allure.title('Проверяем переход по клику на кнопку «Конструктор»')
@@ -31,7 +31,7 @@ class TestMainFunctionality:
         with allure.step('Ждем когда исчезнет оверлей'):
             main_page.wait_overlay_hide()
         with allure.step('Проверяем появление текста "Соберите бургер" на главной странице'):
-            assert main_page.check_current_text_assemble_burger
+            assert main_page.check_current_text_assemble_burger()
 
     @allure.title('Проверяем, что если кликнуть на ингредиент, появится всплывающее окно с деталями')
     def test_click_on_ingredient_fluorescent_bun_shows_ingredient_details(self, driver,
@@ -42,7 +42,7 @@ class TestMainFunctionality:
         with allure.step('Кликаем на ингредиент "Флюоресцентная булка"'):
             main_page.click_ingredient_fluorescent_bun()
         with allure.step('Проверяем появление окна с деталями ингредиента'):
-            assert main_page.check_modal_ingredient_details
+            assert main_page.check_modal_ingredient_details()
 
     @allure.title('Проверяем, что всплывающее окно закрывается кликом по крестику')
     def test_click_on_cross_button_close_page_ingredient_details(self, driver,
@@ -55,7 +55,7 @@ class TestMainFunctionality:
         with allure.step('Закрываем окно с деталями ингредиента кликая на крестик'):
             main_page.click_cross_button()
         with allure.step('Проверяем что окно с деталями ингредиента закрывается при нажатии на крестик'):
-            assert main_page.check_close_modal_ingredient_details
+            assert main_page.check_close_modal_ingredient_details()
 
     @allure.title('Проверяем, что при добавлении ингредиента в заказ, увеличивается каунтер данного ингредиента')
     def test_after_drag_and_drop_ingredient_counter_increases(self, driver,
@@ -64,7 +64,7 @@ class TestMainFunctionality:
         with allure.step('Перетаскиваем ингредиента Соус Spicy-X в поле "Перетяните булочку сюда (верх)"'):
             main_page.drag_and_drop_ingredient_sauce_spicy_x()
         with allure.step('Проверяем что Соус Spicy-X появился в заказе'):
-            assert main_page.check_add_ingredient_sauce_spicy_x
+            assert main_page.check_add_ingredient_sauce_spicy_x()
 
     @allure.title('Проверяем, что залогиненный пользователь может оформить заказ.')
     def test_logged_in_user_can_place_an_order(self, driver,
@@ -95,7 +95,7 @@ class TestMainFunctionality:
         with allure.step('Кликаем по кнопке "Оформить заказ"'):
             main_page.click_button_place_an_order()
         with allure.step('Проверяем появление номера заказа в появившемся окне'):
-            assert main_page.check_visible_text_order_id
+            assert main_page.check_visible_text_order_id()
 
 
 

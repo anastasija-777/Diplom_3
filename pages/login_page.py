@@ -23,7 +23,7 @@ class LoginPage(BasePage):
 
     @allure.step('Ждем пока оверлей станет невидимым')
     def wait_overlay_hide(self):
-        self.wait_for_element_hide(LoginPageLocators.OVERLAY_LOCATOR)
+        return self.wait_for_element_hide(LoginPageLocators.OVERLAY_LOCATOR)
 
     @allure.step('Кликаем по кнопке "Войти"')
     def click_button_login(self):

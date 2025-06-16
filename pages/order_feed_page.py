@@ -7,7 +7,7 @@ class OrderFeedPage(BasePage):
 
     @allure.step('Подождать пока оверлей станет невидимым')
     def wait_overlay_hide(self):
-        self.wait_for_element_hide(OrderFeedPageLocator.OVERLAY_LOCATOR)
+        return self.wait_for_element_hide(OrderFeedPageLocator.OVERLAY_LOCATOR)
 
     @allure.step('Кликаем по кнопке Конструктор')
     def click_button_constructor(self):
@@ -35,11 +35,11 @@ class OrderFeedPage(BasePage):
 
     @allure.step('Проверяем появление заголовка "Лента заказов"')
     def check_title_order_feed(self):
-        self.find_element_with_wait(OrderFeedPageLocator.TEXT_ORDER_FEED)
+        return self.find_element_with_wait(OrderFeedPageLocator.TEXT_ORDER_FEED)
 
     @allure.step('Проверяем что откроется всплывающее окно с деталями')
     def check_appears_window_with_details(self):
-        self.find_element_with_wait(OrderFeedPageLocator.MODAL_ORDER_LOCATOR)
+        return self.find_element_with_wait(OrderFeedPageLocator.MODAL_ORDER_LOCATOR)
 
 
 
